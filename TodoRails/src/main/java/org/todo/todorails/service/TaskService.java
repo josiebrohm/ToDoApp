@@ -61,11 +61,7 @@ public class TaskService {
         // Get Task list
         List<Task> taskListForToday = new ArrayList<>();
 
-        /** TODO 12 : Call the method "findByUserAndDueDateAndCompleted"
-         *            of the taskRepository object and pass the
-         *            user object, currentDate object and status of completed status of false.
-         *            assign the value returned to the array list taskListForToday.
-          **/
+        taskListForToday = taskRepository.findByUserAndDueDateAndCompleted(user, currentDate, false);
 
 
         //return the task list

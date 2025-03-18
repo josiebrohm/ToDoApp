@@ -29,10 +29,7 @@ public class TaskController {
         // Fetch tasks due today for the current user
         List<Task> todayTasks = taskService.getTodayTasksForCurrentUser();
 
-        /** TODO 13 (a): add the list "todaysTask" object  to the "model"
-                         object with the attribute name "todaysTasks"
-                        using the method "addAttribute".
-         **/
+        model.addAttribute("todayTasks", todayTasks);
 
 
         // Fetch all tasks for the current user, sorted by due date
