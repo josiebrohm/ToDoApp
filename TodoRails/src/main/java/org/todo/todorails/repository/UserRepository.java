@@ -12,9 +12,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
     // Method to find a user by their email
     User findByEmail(String email);
 
-    /** TODO 8 (a): define a query to find check if a user exists by username **/
     // Method to check a user exists by their username. Should be named existsByUsername().
-
+    boolean existsByUsername(String username);
 
     // Method to check a user exists by their email
     boolean existsByEmail(String email);

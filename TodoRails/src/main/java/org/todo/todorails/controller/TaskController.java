@@ -90,8 +90,7 @@ public class TaskController {
     @PostMapping("/addtask")
     public String saveTask(@ModelAttribute("task") Task task, Model model, RedirectAttributes redirectAttributes) {
         try {
-            /** TODO 11: call the "saveTask" method of the "taskService" to save the task object passed **/
-
+            taskService.saveTask(task);
             redirectAttributes.addFlashAttribute("successMessage", "Task added successfully!");
             return "redirect:/dashboard";
         } catch (Exception e) {
