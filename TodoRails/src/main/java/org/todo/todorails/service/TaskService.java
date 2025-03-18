@@ -100,8 +100,7 @@ public class TaskService {
         Task task = taskRepository.findByUserAndId(user, taskId);
 
         if (task != null && !task.isCompleted()) {
-            /** TODO 16: set the task completion status to of the "task" object to true **/
-
+            task.setCompleted(true);
             task.setCompletionDate(LocalDate.now());
             taskRepository.save(task);
             return true;
@@ -230,12 +229,6 @@ public class TaskService {
     }
 
     public int countByCompleted(boolean completedStatus) {
-        /** TODO 20 (b): replace the "return 0" with the value returned from a
-         *                call to the respository method  return the count of
-         *                tasks based on the completion status from the TaskRespository
-         *               which you created in TODO 20 (a)
-          **/
-        return 0;
-
+        return taskRepository.countByCompleted(completedStatus);
     }
 }

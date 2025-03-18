@@ -24,11 +24,6 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
     // Find task by taskId
     Task getById(Long id);
 
-
-    /** TODO 20 (a) : add the:
-     *               int countByCompleted(boolean completed);
-     *               method to count how many tasks are completed
-     *              or not based on a boolean value passed representing the completion status.
-     **/
+    int countByCompleted(boolean completed);
 
 }
