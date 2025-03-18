@@ -41,9 +41,8 @@ public class TaskController {
 
         LocalDateTime localDateTime = LocalDateTime.now();
         String formattedDate = DateTimeFormatter.ofPattern("MM/dd/yyyy").format(localDateTime);
-        /** TODO 14: send the "formattedDate" to the client with the attribute name "serverTime"
-         *           in the model
-         **/
+
+        model.addAttribute("serverTime", LocalDateTime.now());
 
 
         /** TODO 20 (c): For the value of the attributes:
