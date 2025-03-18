@@ -42,8 +42,8 @@ public class TaskController {
         LocalDateTime localDateTime = LocalDateTime.now();
         String formattedDate = DateTimeFormatter.ofPattern("MM/dd/yyyy").format(localDateTime);
 
-        model.addAttribute("serverTime", LocalDateTime.now());
-        
+        model.addAttribute("serverTime", formattedDate);
+
         model.addAttribute("completedCount", taskService.countByCompleted(true));
         model.addAttribute("pendingCount",taskService.countByCompleted(false));
 
